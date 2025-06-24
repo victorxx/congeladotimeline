@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Compare preços de geladeiras, freezers e ar-condicionado em Vitória - ES. Veja ofertas congeladas e economize com nosso guia atualizado." />
+  <meta name="keywords" content="geladeira, freezer, ar-condicionado, preços, Vitória, ES, ofertas, eletrodomésticos, comparar preços" />
+  <meta name="author" content="Comparador Congelado" />
+  <title>❄️ Comparador Congelado – Preços de Freezer, Geladeira e Ar-condicionado em Vitória</title>
+  <style>
+/* Estilo base do corpo da página */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://www.transparenttextures.com/patterns/ice.png') repeat, #cceeff; /* Fundo com textura de gelo e cor azul clara */
+  margin: 0;
+  padding: 0;
+  color: #2c3e50; /* Cor do texto principal */
+}
+
+/* Estilo do cabeçalho */
+header {
+  background: rgba(30, 144, 255, 0.85); /* Fundo azul translúcido */
+  color: white; /* Texto branco */
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(3px); /* Desfoque para efeito de vidro congelado */
+  border-bottom: 4px solid #b3e5fc; /* Borda inferior azul clara */
+}
+
+/* Estilo do título principal no header */
+header h1 {
+  font-size: 2.4em;
+  margin: 0;
+  text-shadow: 2px 2px 4px #003366; /* Sombra azul escura para destacar */
+}
+
+/* Slogan abaixo do título */
+.slogan {
+  font-style: italic;
+  color: #e0f7fa; /* Cor azul clara */
+  margin-top: 10px;
+}
+
+/* Container principal do conteúdo */
+.container {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.75); /* Fundo branco semi-transparente */
+  backdrop-filter: blur(3px); /* Desfoque para efeito vidro congelado */
+  margin: 20px;
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0 0 10px #b3e5fc; /* Sombra azul clara */
+}
+
+/* Estilo dos títulos secundários */
+h2 {
+  border-bottom: 2px solid #3498db; /* Linha azul */
+  padding-bottom: 6px;
+  margin-top: 40px;
+  position: relative;
+  color: #006699; /* Azul escuro */
+}
+
+/* Ícone de floco de neve no título */
+h2::after {
+  content: "❄️";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2em;
+}
+
+/* Estilo das tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaços entre células */
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.85); /* Fundo branco semi-transparente */
+}
+
+/* Células das tabelas */
+th, td {
+  border: 1px solid #a0cfee; /* Borda azul clara */
+  padding: 10px;
+}
+
+/* Cabeçalho das tabelas */
+th {
+  background: #3498db; /* Azul forte */
+  color: white;
+}
+
+/* Linhas pares com cor diferente para facilitar leitura */
+tr:nth-child(even) {
+  background-color: #eef9ff;
+}
+
+/* Destaque especial para linhas importantes */
+.destaque {
+  background-color: #fff9c4; /* Amarelo claro */
+  font-weight: bold;
+}
+
+/* Estilo para os cards de produtos */
+.produto {
+  display: inline-block;
+  width: 23%;
+  margin: 1%;
+  vertical-align: top;
+  border: 2px solid #b3e5fc; /* Borda azul clara */
+  border-radius: 8px;
+  padding: 10px;
+  background: #f0fbff; /* Fundo branco com leve azul */
+  box-shadow: 0 0 5px #aadff0; /* Sombra azul suave */
+}
+
+/* Imagens dentro dos cards */
+.produto img {
+  width: 100%;
+  border-radius: 5px;
+  filter: brightness(0.95); /* Deixa a imagem um pouco mais escura */
+}
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(30, 144, 255, 0.9); /* Azul translúcido */
+  color: white;
+  margin-top: 40px;
+  backdrop-filter: blur(2px); /* Desfoque suave */
+}
+
+/* Animação para neve caindo */
+@keyframes snow {
+  0% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Estilo para flocos de neve */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  font-size: 1em;
+  color: white;
+  animation: snow 10s linear infinite;
+  pointer-events: none; /* Não interfere no clique */
+}
+
+/* Div congelada para destaque */
+.div-congelada {
+  background: rgba(255, 255, 255, 0.6); /* Fundo branco translúcido */
+  backdrop-filter: blur(4px); /* Desfoque forte para efeito vidro congelado */
+  border: 2px solid #aee2f8; /* Borda azul gelo */
+  border-radius: 10px; /* Cantos arredondados */
+  padding: 15px;
+  margin: 20px auto;
+  width: fit-content; /* Largura ajustada ao conteúdo */
+  box-shadow: 0 0 10px #cceeff; /* Sombra azul clara */
+  color: #005577; /* Azul escuro */
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* Botão congelado fixo na tela */
+a[href="loja.html"] {
+  color: #005577; /* Texto branco */
+  font-size: large;
+  position: fixed;
+  bottom: 200px;
+  left: 60%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  background: linear-gradient(145deg, #d0f0ff, #aee2f8); /* Gradiente de azul gelo */
+  border-radius: 12px;
+  border: 2px solid #e0f7ff; /* Borda azul clara */
+  padding: 20px 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.6), inset 0 0 5px #ffffff; /* Sombras externas e internas */
+  transition: all 0.3s ease;
+  width: auto;
+  text-align: center;
+  text-decoration: none; /* Remove sublinhado */
+  backdrop-filter: blur(4px); /* Efeito vidro congelado */
+  z-index: 999; /* Fica acima de outros elementos */
+}
+
+/* Efeito hover (quando passa o mouse) no botão */
+a[href="loja.html"]:hover {
+  background: linear-gradient(145deg, #b0e0ff, #dfffff); /* Gradiente mais claro */
+  box-shadow: 0 0 20px #aee2f8, inset 0 0 10px #ffffff; /* Brilho extra */
+  transform: translateX(-50%) scale(1.05); /* Aumenta um pouco */
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>❄️ Comparador Congelado</h1>
+    <p class="slogan">Ofertas de arrepiar no frio de Vitória – ES</p>
+    <div class="div-congelada">
+      <!--------------------------------------------dadosatualizados-->
+  <p>🧊 Dados atualizados em: <span id="dataAtual"></span></p>
+</div>
+<script>
+  const hoje = new Date();
+  const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
+  const dataFormatada = hoje.toLocaleDateString('pt-BR', opcoes);
+  document.getElementById('dataAtual').textContent = dataFormatada;
+</script>
+  <!--------------------------------------------dadosatualizados-->
+  </header>
+
+
+  
+
+  <div class="container">
+    <h2>🧊 Tabela de Preços – Freezers & Geladeiras</h2>
+    <table>
+      <tr><th>Produto</th><th>Preço</th><th>Loja / Local</th></tr>
+      <tr><td>Freezer Vertical Consul 220L</td><td>R$ 1.700</td><td>OLX – Vila Velha</td></tr>
+      <tr><td>Freezer Gelopar 577 L</td><td>R$ 3.100</td><td>OLX – Vitória</td></tr>
+      <tr><td>Freezer Philco 205 L</td><td>R$ 2.974 (à vista)</td><td>Magazine Luiza</td></tr>
+      <tr class="destaque"><td>Freezer EOS 210 L</td><td>R$ 2.161 (Pix)</td><td>Magazine Luiza</td></tr>
+    </table>
+
+    <h2>❄️ Tabela de Preços – Ar-condicionado</h2>
+    <table>
+      <tr><th>Modelo</th><th>Preço</th><th>Loja / Local</th></tr>
+      <tr><td>Springer Midea Janela 7 000 BTUs</td><td>R$ 1.899</td><td>Lojas Império</td></tr>
+      <tr><td>Philco Split Inverter 9 000 BTUs</td><td>R$ 2.199</td><td>Lojas Império</td></tr>
+      <tr><td>Philco Split Inverter 12 000 BTUs</td><td>R$ 2.499</td><td>Lojas Império</td></tr>
+      <tr><td>Usado Split 12 000 BTUs</td><td>R$ 980</td><td>OLX – Vitória</td></tr>
+    </table>
+
+    <h2>🏆 Destaques da Semana</h2>
+    <div class="produto">
+      <img src="https://via.placeholder.com/200x150?text=Geladeira+Consul" alt="Geladeira Consul Frost Free Duplex">
+      <p><strong>Geladeira Consul Duplex</strong><br>R$ 2.819 – Magazine Luiza</p>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/200x150?text=Freezer+Gelopar" alt="Freezer Gelopar 577L">
+      <p><strong>Freezer Gelopar 577L</strong><br>R$ 3.100 – OLX Vitória</p>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/200x150?text=Ar+Condicionado+Philco" alt="Ar condicionado Philco Split">
+      <p><strong>Philco Split 12k</strong><br>R$ 2.499 – Lojas Império</p>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/200x150?text=Freezer+EOS" alt="Freezer EOS 210L">
+      <p><strong>Freezer EOS 210L</strong><br>R$ 2.161 – Magazine Luiza</p>
+    </div>
+    <div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Geladeira+Brastemp" alt="Geladeira Brastemp Frost Free 375L">
+  <p><strong>Geladeira Brastemp Frost Free 375L</strong><br>R$ 3.199 – Amazon</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Freezer+Consul" alt="Freezer Horizontal Consul 312L">
+  <p><strong>Freezer Consul Horizontal 312L</strong><br>R$ 2.790 – Casas Bahia</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Ar+Springer" alt="Ar-condicionado Springer 9.000 BTUs">
+  <p><strong>Springer Midea 9.000 BTUs</strong><br>R$ 2.080 – Lojas Americanas</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Ar+Samsung" alt="Ar-condicionado Samsung WindFree 12k">
+  <p><strong>Samsung WindFree 12.000 BTUs</strong><br>R$ 3.299 – Submarino</p>
+</div>
+
+ <div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Geladeira+Eletrolux" alt="Geladeira Electrolux Inox">
+  <p><strong>Geladeira Electrolux 382L Inox</strong><br>R$ 3.460 – Carrefour</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Ar+Philco+9000" alt="Ar-condicionado Philco 9000 BTUs">
+  <p><strong>Philco Inverter 9.000 BTUs</strong><br>R$ 2.199 – Lojas Império</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Freezer+Metalfrio" alt="Freezer Metalfrio 312L">
+  <p><strong>Freezer Metalfrio 312L</strong><br>R$ 3.190 – OLX Vitória</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Geladeira+Consul+342L" alt="Geladeira Consul 342L">
+  <p><strong>Geladeira Consul 342L</strong><br>R$ 2.499 – Magazine Luiza</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Freezer+Fricon" alt="Freezer Fricon 400L">
+  <p><strong>Freezer Fricon Horizontal 400L</strong><br>R$ 3.499 – Mercado Livre</p>
+</div>
+
+<div class="produto">
+  <img src="https://via.placeholder.com/200x150?text=Ar+LG+18000" alt="Ar LG Dual Inverter 18.000 BTUs">
+  <p><strong>LG Dual Inverter 18.000 BTUs</strong><br>R$ 4.190 – Kabum</p>
+</div>
+
+
+    <h2>📈 Dica Congelada</h2>
+    <p>❄️ Julho é o mês ideal para comprar ar-condicionado em Vitória! A demanda cai e os preços "congelam". Acompanhe as promoções semanais em OLX, Lojas Império e e-commerces confiáveis.</p>
+  </div>
+
+  <footer class="footer">
+    <p>Comparador Congelado – Vitória, Espírito Santo</p>
+    <p>Dados atualizados semanalmente com base em lojas online e marketplaces regionais</p>
+  </footer>
+
+
+
+
+  <!-- Neve decorativa -->
+  <div class="snowflake" style="left:10%;">❄️</div>
+  <div class="snowflake" style="left:30%; animation-delay: 2s;">❄️</div>
+  <div class="snowflake" style="left:50%; animation-delay: 4s;">❄️</div>
+  <div class="snowflake" style="left:70%; animation-delay: 6s;">❄️</div>
+  <div class="snowflake" style="left:90%; animation-delay: 8s;">❄️</div>
+
+
+
+<a href="loja.html">
+  CONFERIR
+</a>
+
+</body>
+</html>
